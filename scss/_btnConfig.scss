@@ -1,6 +1,8 @@
-  @import "utilities";
-  @import "config";
+//   @import "utilities";
+//   @import "config";
 
+@use "utilities";
+@use "config";
 
   %btn {
       display: inline-block;
@@ -17,10 +19,10 @@
 // @extend applies the styles from %btn to both the primary and secondary buttons //
   .btn-primary {
       @extend %btn;
-      @include set-bg(lighten($primary-color, 10%));
+      @include utilities.set-bg(lighten(config.$primary-color, 10%));
   }
 
   .btn-secondary {
       @extend %btn;
-      @include set-bg($secondary-color);
+      @include utilities.set-bg(config.$secondary-color);
   }

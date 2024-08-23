@@ -1,6 +1,11 @@
-@import "btnConfig";
-@import "utilities";
-@import "config";
+// @import "btnConfig";
+// @import "utilities";
+// @import "config";
+// deprecated
+
+@use "btnConfig";
+@use "utilities";
+@use "config";
 
 * {
   box-sizing: border-box;
@@ -9,8 +14,8 @@
 }
 
 body {
-  background-color: $light-color;
-  font-family: $font-stack;
+  background-color: config.$light-color; // updated for @use
+  font-family: config.$font-stack;
   line-height: 1;
 }
 
@@ -23,7 +28,7 @@ a {
 }
 
 .hero {
-  @include set-bg($primary-color);
+  @include utilities.set-bg(config.$primary-color);
   height: 600px;
 
   nav {
@@ -41,11 +46,11 @@ a {
     }
 
     a {
-      color: text-color-picker($primary-color);
+      color: utilities.text-color-picker(config.$primary-color);
     }
 
     a:hover {
-      color: $secondary-color;
+      color: config.$secondary-color;
     }
   }
 
