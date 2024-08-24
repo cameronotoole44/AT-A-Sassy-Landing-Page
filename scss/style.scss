@@ -14,7 +14,7 @@
 }
 
 body {
-  background-color: config.$light-color; // updated for @use
+background-color: config.$light-color; // access color value from config 
   font-family: config.$font-stack;
   line-height: 1;
 }
@@ -28,7 +28,7 @@ a {
 }
 
 .hero {
-  @include utilities.set-bg(config.$primary-color);
+@include utilities.set-bg(config.$primary-color); // sets background using primary color from config file //
   height: 600px;
 
   nav {
